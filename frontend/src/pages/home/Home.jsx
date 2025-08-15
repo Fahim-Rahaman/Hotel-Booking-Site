@@ -1,12 +1,13 @@
 import React from 'react'
+import Navbar from '../../components/navbar/Navbar'
+import Header from '../../components/header/Header'
 
 const Home = () => {
   return (
     <div>
-      Home Page
-      <p>Welcome to the hotel booking app!</p>
+      <Navbar />
+      <Header />
     </div>
   )
-}
-
+} 
 export default Home
