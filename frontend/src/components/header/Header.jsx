@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBed,faTaxi,faPlane,faCar } from '@fortawesome/free-solid-svg-icons'
+import { faBed,faTaxi,faPlane,faCar,faCalendarDays,faPerson } from '@fortawesome/free-solid-svg-icons'
 import './header.css'
 
 const Header = () => {
@@ -23,6 +23,36 @@ const Header = () => {
           <div className="headerListItem">
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airprot Taxi</span>
+          </div>
+        </div>
+        <h1 className="headerTitle">A lifetime of discounts? It's Genius.</h1>
+        <p className="headerDesc">
+          Get rewarded for your travels - unlock instant savings of 10% or more
+          with a free account
+        </p>
+        <button className="headerBtn">Sign In / Register</button>
+        <div className="headerSearch">
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faBed} className="headerSearchIcon" />
+            <input
+              type="text"
+              placeholder="Where are you going?"
+              className="headerSearchInput"
+            />
+          </div>
+          <div className="headerSearchItem">
+            <FontAwesomeIcon
+              icon={faCalendarDays}
+              className="headerSearchIcon"
+            />
+            <span className="headerSearchText">Check-in Date</span>
+          </div>
+          <div className="headerSearchItem">
+            <FontAwesomeIcon icon={faPerson} className="headerSearchIcon" />
+            <span className="headerSearchText">2 Adults 2 children</span>
+          </div>
+          <div className="headerSearchItem">
+            <button className="headerBtn">Search</button>
           </div>
         </div>
       </div>
