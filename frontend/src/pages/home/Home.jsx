@@ -4,7 +4,6 @@ import Header from '../../components/header/Header'
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
       <Navbar />
       <Header />
     </div>
