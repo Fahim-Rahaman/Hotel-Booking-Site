@@ -1,12 +1,19 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
 import Header from '../../components/header/Header'
+import Featured from '../../components/featured/featured'
+import PropertyList from '../../components/propertyList/propertyList'
+import './Home.css'
 const Home = () => {
   return (
     <div>
-      <h1>Hotel Home Page</h1>
       <Navbar />
       <Header />
+      <div className="homeContainer">
+        <Featured />
+        <h1 className="homeTitle">Browse by property type</h1>
+        <PropertyList />
+      </div>
     </div>
   )
 } 

@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 
-const Header = () => {
+const Header = ({type}) => {
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
 
@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="headerContainer">
+      <div className= {type === "list" ? "headerContainer listMode" : "headerContainer"}>
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
@@ -64,6 +64,8 @@ const Header = () => {
             <span>Airprot Taxi</span>
           </div>
         </div>
+        { type !== "list" && 
+        <>  
         <h1 className="headerTitle">A lifetime of discounts? It's Genius.</h1>
         <p className="headerDesc">
           Get rewarded for your travels - unlock instant savings of 10% or more
@@ -146,6 +148,7 @@ const Header = () => {
             <button className="headerBtn">Search</button>
           </div>
         </div>
+        </>}
       </div>
     </div>
   );
