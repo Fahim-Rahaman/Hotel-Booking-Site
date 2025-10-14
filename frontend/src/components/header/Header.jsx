@@ -1,14 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faTaxi, faPlane, faCar, faCalendarDays, faPerson } from '@fortawesome/free-solid-svg-icons'
 import './header.css'
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 
 const Header = ({type}) => {
+  const [destination, setDestination] = useState("");
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
+  const navigate = useNavigate();
+
 
   const handleSearch = async () => {
     if (checkInDate && checkOutDate) {
@@ -42,6 +46,9 @@ const Header = ({type}) => {
       };
     });
   };
+  const handleSearchBar = () => {
+    navigate("/list", { state: { destination, checkInDate, checkOutDate, options } });
+  }
 
   return (
     <div className="header">
@@ -79,6 +86,7 @@ const Header = ({type}) => {
               type="text"
               placeholder="Where are you going?"
               className="headerSearchInput"
+              onChange={(e) => setDestination(e.target.value)}
             />
           </div>
           <div className="headerSearchItem">
@@ -145,7 +153,7 @@ const Header = ({type}) => {
             </div>}
           </div>
           <div className="headerSearchItem">
-            <button className="headerBtn">Search</button>
+            <button className="headerBtn" onClick={handleSearchBar}>Search</button>
           </div>
         </div>
         </>}
